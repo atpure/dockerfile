@@ -5,12 +5,12 @@ WORKDIR /home/app
 
 RUN sed -i 's/archive.ubuntu.com/ftp.daum.net/g' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y
-RUN apt-get install -y vim sudo npm
+RUN apt-get install -y vim sudo curl npm
 
-RUN npm install -g npm@latest
+RUN npm install -g n && n latest && npm install -g npm && hash -d npm && npm i
 
-RUN npm i -g @vue/cli
-RUN npm install -g express-generator
+#RUN npm i -g @vue/cli
+#RUN npm install -g express-generator
 
 RUN cd /home/app
 
